@@ -10,8 +10,8 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: const Text('Cart Page'),
+    return const Center(
+      child:  Text('Cart Page'),
     );
   }
 }

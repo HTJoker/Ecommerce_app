@@ -18,7 +18,7 @@ class MyBottomNav extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         tabBorderRadius: 30,
         onTabChange: (value) => onTabChange!(value),
-        tabs: [
+        tabs: const [
           GButton(icon: Icons.home, text: "Home"),
           GButton(icon: Icons.shopping_bag_rounded, text: 'cart')
         ],
