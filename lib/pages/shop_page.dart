@@ -66,10 +66,16 @@ class _ShopPageState extends State<ShopPage> {
               Shoe shoe = Shoe(
                   name: 'Air Jordans',
                   price: '240',
-                  description: "alsdjflsjdf",
+                  description: "These are lit",
                   imagePath: 'lib/images/nike1.png');
               return ShoeTile(shoe: shoe);
             },
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 25.0, left: 25, right: 25),
+          child: Divider(
+            color: Colors.white,
           ),
         )
       ],
