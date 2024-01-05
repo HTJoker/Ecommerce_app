@@ -65,7 +65,7 @@ class _ShopPageState extends State<ShopPage> {
             itemBuilder: (context, index) {
               Shoe shoe = Shoe(
                   name: 'Air Jordans',
-                  price: '240',
+                  price: '300',
                   description: "These are lit",
                   imagePath: 'lib/images/nike1.png');
               return ShoeTile(shoe: shoe);
