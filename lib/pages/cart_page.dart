@@ -1,4 +1,9 @@
+import "package:ecommerce_app/models/cart.dart";
 import "package:flutter/material.dart";
+import "package:provider/provider.dart";
+
+import "../components/cart_item.dart";
+import "../models/shoe.dart";
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -10,8 +15,28 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child:  Text('Cart Page'),
+    return Consumer<Cart>(
+      builder: (context, value, child) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            const Text(
+              "My Cart",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: value.getUserCart().length,
+                  itemBuilder: (context, index) {
+                    Shoe individualShoe = value.getUserCart()[index];
+
+                    return CartItem(shoe: individualShoe);
+                  }),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
