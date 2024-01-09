@@ -16,21 +16,12 @@ class _ShopPageState extends State<ShopPage> {
   void addShoeToCart(Shoe shoe) {
     Provider.of<Cart>(context, listen: false).addToCart(shoe);
 
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: const Text('Added to Cart'),
-            content: Text('${shoe.name} was added to your cart'),
-            actions: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('OK'))
-            ],
-          );
-        });
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("${shoe.name} added to cart"),
+        duration: const Duration(seconds: 1),
+      ),
+    );
   }
 
   @override
